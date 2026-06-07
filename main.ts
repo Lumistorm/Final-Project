@@ -13,17 +13,19 @@ const SERVO_2_ZERO = 180
 
 let degrees: number = 0
 
-robotbit.Servo(SERVO_1, SERVO_1_ZERO)
-robotbit.Servo(SERVO_2, SERVO_2_ZERO)
+robotbit.Servo(SERVO_1, 0)
+robotbit.Servo(SERVO_2, 180)
+
+basic.showIcon(IconNames.Happy)
 
 input.onButtonPressed(Button.A, function () {
-    degrees = 180
+    degrees = 90
     robotbit.Servo(SERVO_1, SERVO_1_ZERO + degrees)
     robotbit.Servo(SERVO_2, SERVO_2_ZERO - degrees)
 })
 
 input.onButtonPressed(Button.B, function () {
-    degrees = 90
+    degrees = 0
     robotbit.Servo(SERVO_1, SERVO_1_ZERO + degrees)
     robotbit.Servo(SERVO_2, SERVO_2_ZERO - degrees)
 })
